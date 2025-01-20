@@ -1,0 +1,1 @@
+#This canvas can add text, change color using a color picker, and change, increase, and decrease font size and style. You can also move text in through the canvas. You also use the undo and redo buttons.
