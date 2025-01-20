@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Text Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Canvas Text Editor</h1>
+        <div class="controls">
+            <button id="addTextBtn">Add Text</button>
+            <select id="fontSelect">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Calibri">Calibri</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Impact">Impact</option>
+                <option value="Lucida Console">Lucida Console</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Palatino Linotype">Palatino Linotype</option>
+                <option value="Bookman Old Style">Bookman Old Style</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Monaco">Monaco</option>
+            </select>
+            <input type="color" id="colorPicker" value="#000000">
+            <input type="number" id="fontSizeInput" min="10" max="100" value="20" placeholder="Font Size">
+            <button id="undoBtn">Undo</button>
+            <button id="redoBtn">Redo</button>
+            <i id="boldIcon" class="fa fa-bold"></i>
+            <i id="italicIcon" class="fa fa-italic"></i>
+            <i id="underlineIcon" class="fa fa-underline"></i>
+            <button id="clearCanvasBtn">Clear Canvas</button>
+        </div>
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
