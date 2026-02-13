@@ -1,46 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas Text Editor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canvas Pro - Manav</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div class="container">
-        <h1>Canvas Text Editor</h1>
-        <div class="controls">
-            <button id="addTextBtn">Add Text</button>
-            <select id="fontSelect">
-                <option value="Arial">Arial</option>
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Verdana">Verdana</option>
-                <option value="Calibri">Calibri</option>
-                <option value="Helvetica">Helvetica</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Comic Sans MS">Comic Sans MS</option>
-                <option value="Impact">Impact</option>
-                <option value="Lucida Console">Lucida Console</option>
-                <option value="Tahoma">Tahoma</option>
-                <option value="Trebuchet MS">Trebuchet MS</option>
-                <option value="Palatino Linotype">Palatino Linotype</option>
-                <option value="Bookman Old Style">Bookman Old Style</option>
-                <option value="Garamond">Garamond</option>
-                <option value="Monaco">Monaco</option>
-            </select>
-            <input type="color" id="colorPicker" value="#000000">
-            <input type="number" id="fontSizeInput" min="10" max="100" value="20" placeholder="Font Size">
-            <button id="undoBtn">Undo</button>
-            <button id="redoBtn">Redo</button>
-            <i id="boldIcon" class="fa fa-bold"></i>
-            <i id="italicIcon" class="fa fa-italic"></i>
-            <i id="underlineIcon" class="fa fa-underline"></i>
-            <button id="clearCanvasBtn">Clear Canvas</button>
+  <main class="container">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">🎨</div>
+        <div>
+          <h1>Canvas Pro</h1>
+          <p>Draw • Shapes • Text Pro • Undo/Redo • Save PNG/JPG • Grid</p>
         </div>
-        <canvas id="canvas" width="800" height="600"></canvas>
-    </div>
-    <script src="app.js"></script>
+      </div>
+
+      <div class="topBtns">
+        <button id="themeBtn" class="iconBtn" title="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <div class="toolGroup">
+        <button id="penBtn" class="toolBtn active">✏️ Pen</button>
+        <button id="eraserBtn" class="toolBtn">🧽 Eraser</button>
+        <button id="textBtn" class="toolBtn">🅰 Text</button>
+      </div>
+
+      <div class="toolGroup">
+        <button id="lineBtn" class="toolBtn">📏 Line</button>
+        <button id="dottedBtn" class="toolBtn">⋯ Dotted</button>
+        <button id="arrowBtn" class="toolBtn">➡ Arrow</button>
+        <button id="doubleArrowBtn" class="toolBtn">↔ Double</button>
+        <button id="rectBtn" class="toolBtn">▭ Rect</button>
+        <button id="circleBtn" class="toolBtn">◯ Circle</button>
+      </div>
+
+      <div class="toolGroup">
+        <label class="miniLabel">Brush</label>
+        <input id="size" type="range" min="1" max="50" value="8" />
+        <span id="sizeVal" class="pill">8</span>
+      </div>
+
+      <div class="toolGroup">
+        <label class="miniLabel">Text</label>
+
+        <select id="fontFamily">
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Courier New">Courier New</option>
+        </select>
+
+        <input id="fontSize" type="range" min="12" max="72" value="28" />
+        <span id="fontSizeVal" class="pill">28</span>
+
+        <button id="boldBtn" class="toolBtn">B</button>
+        <button id="textBgBtn" class="toolBtn">BG</button>
+      </div>
+
+      <div class="toolGroup">
+        <label class="miniLabel">Color</label>
+        <input id="color" type="color" value="#7c5cff" />
+        <div class="swatches">
+          <button class="swatch" data-color="#7c5cff" style="background:#7c5cff"></button>
+          <button class="swatch" data-color="#00e5ff" style="background:#00e5ff"></button>
+          <button class="swatch" data-color="#22c55e" style="background:#22c55e"></button>
+          <button class="swatch" data-color="#f97316" style="background:#f97316"></button>
+          <button class="swatch" data-color="#ef4444" style="background:#ef4444"></button>
+          <button class="swatch" data-color="#ffffff" style="background:#ffffff"></button>
+          <button class="swatch" data-color="#000000" style="background:#000000"></button>
+        </div>
+      </div>
+
+      <div class="toolGroup">
+        <label class="miniLabel">Background</label>
+        <input id="bgColor" type="color" value="#ffffff" />
+        <button id="gridBtn" class="toolBtn">⬚ Grid</button>
+      </div>
+
+      <div class="toolGroup right">
+        <button id="undoBtn" class="toolBtn">↩ Undo</button>
+        <button id="redoBtn" class="toolBtn">↪ Redo</button>
+        <button id="clearBtn" class="toolBtn danger">🗑 Clear</button>
+
+        <button id="savePngBtn" class="toolBtn primary">⬇ PNG</button>
+        <button id="saveJpgBtn" class="toolBtn primary">⬇ JPG</button>
+      </div>
+    </section>
+
+    <section class="canvasWrap">
+      <canvas id="canvas"></canvas>
+    </section>
+
+    <footer class="footer">
+      Made by <b>Manav</b> • Works on GitHub Pages
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
