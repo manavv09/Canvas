@@ -6,7 +6,7 @@ It includes advanced tools like **shapes, arrows, dotted lines, pro text tool, u
 ---
 
 ## 🚀 Live Demo
-👉 **Live:** (Paste your GitHub Pages link here)
+👉 **Live:**  https://manavv09.github.io/Canvas/
 
 ---
 
